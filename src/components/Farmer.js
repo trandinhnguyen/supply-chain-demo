@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { noneFilter, productState, stateToString } from "../utils/constants";
+import {
+  noneFilter,
+  productState,
+  stateToString,
+  timestampToDate,
+} from "../utils/constants";
 
 const Farmer = (props) => {
   const account = props.account;
@@ -52,7 +57,7 @@ const Farmer = (props) => {
           <td>{noneFilter(product[8])}</td>
           <td>{noneFilter(product[9])}</td>
           <td>{noneFilter(product[10])}</td>
-          <td>{Date(product[11].toNumber())}</td>
+          <td>{timestampToDate(product[11])}</td>
           <td>
             {product[3] === productState.PurchasedByDistributor ? (
               <button onClick={() => shipProduct(product[0])}>

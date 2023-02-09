@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { productState, stateToString, noneFilter } from "../utils/constants";
+import {
+  productState,
+  stateToString,
+  noneFilter,
+  timestampToDate,
+} from "../utils/constants";
 
 const { ethereum } = window;
 
@@ -120,7 +125,7 @@ const Retailer = (props) => {
             <td>{noneFilter(product[8])}</td>
             <td>{noneFilter(product[9])}</td>
             <td>{noneFilter(product[10])}</td>
-            <td>{Date(product[11].toNumber())}</td>
+            <td>{timestampToDate(product[11])}</td>
             <td>
               {product[3] === productState.ReceivedByDistributor ? (
                 <button

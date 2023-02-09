@@ -31,6 +31,10 @@ export const stateToString = [
 ];
 
 export const noneFilter = (value) => {
-  if (value === 0) return "None";
+  if (value == 0) return "None";
   return value;
+};
+export const timestampToDate = (timestamp) => {
+  var datetime = new Date(timestamp.toNumber() * 1000);
+  return datetime.toUTCString();
 };
